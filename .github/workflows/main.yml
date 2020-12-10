@@ -2,7 +2,7 @@ name: Deploy CMS
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
