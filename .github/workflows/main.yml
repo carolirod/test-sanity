@@ -1,4 +1,4 @@
-name: Deploy CMS - Sanity CI
+name: Deploy CMS
 on:
     push:
         branches: [main]
