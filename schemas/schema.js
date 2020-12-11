@@ -12,6 +12,7 @@ import author from './author'
 import gift from './gift'
 import tree from './tree'
 import star from './star'
+import fotos from './fotos'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
     gift,
     tree,
     star,
+    fotos,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

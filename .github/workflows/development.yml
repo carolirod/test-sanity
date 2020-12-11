@@ -1,0 +1,30 @@
+name: Deploy CMS
+on:
+    push:
+        branches: [development]
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Setup Node.js environment
+              uses: actions/setup-node@master
+              with:
+                node-version: 10.x
+            - name: Install dependencies
+              run: |
+                  yarn
+            - name: Deploy Sanity Studio
+              run: |
+                  set -e
+                  cat << EOF > .env.development
+                  EOF
+                  SANITY_ACTIVE_ENV=development
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity deploy
+            - name: Deploy Sanity GraphQL
+              run: |
+                  set -e
+                  cat << EOF > .env.development
+                  EOF
+                  SANITY_STUDIO_API_DATASET=development
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --playground
