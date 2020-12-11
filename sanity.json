@@ -15,14 +15,6 @@
     "@sanity/desk-tool"
   ],
   "env": {
-    "production": {
-      "plugins": [
-        "@sanity/vision"
-      ],
-      "api": {
-        "dataset": "production"
-      }
-    },
     "development": {
       "plugins": [
         "@sanity/vision"

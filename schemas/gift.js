@@ -8,10 +8,16 @@ export default {
       title: 'Name',
       type: 'string',
     },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+    },
   ],
   preview: {
     select: {
       title: 'name',
+      subtitle: 'price',
     },
   },
 }
