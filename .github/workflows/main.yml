@@ -25,4 +25,4 @@ jobs:
                   set -e
                   cat << EOF > .env.production
                   EOF
-                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --playground
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --playground --force
