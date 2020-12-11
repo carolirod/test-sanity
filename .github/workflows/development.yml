@@ -19,5 +19,5 @@ jobs:
                   set -e
                   cat << EOF > .env.development
                   EOF
-                  SANITY_STUDIO_API_DATASET=development
-                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --playground
+                  SANITY_ACTIVE_ENV=development
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --dataset development --playground
