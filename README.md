@@ -16,7 +16,13 @@ Now you can do the following things:
 $ sanity graphql deploy
 ```
 
-Can't have a Studio for development but yes a graphQL playground
+Can't have a Studio URL for development but yes a graphQL playground
 ```
 $ sanity graphql deploy --dataset development
+```
+
+
+Development GraphQL playground can be deployed with the development dataset
+```
+yarn sanity graphql deploy --dataset development --playground --force
 ```
