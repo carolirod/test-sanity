@@ -14,15 +14,15 @@ jobs:
             - name: Install dependencies
               run: |
                   yarn
-            - name: Deploy Sanity
+            - name: Deploy Sanity Studio
               run: |
                   set -e
-                  # Put your environment variables here. Don't forget
-                  # to create secrets for them on GitHub:
-                  # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
                   cat << EOF > .env.production
-                  # SANITY_STUDIO_FRONTEND_PREVIEW_SECRET=${{ secrets.SANITY_STUDIO_FRONTEND_PREVIEW_SECRET }}
-                  # SANITY_STUDIO_FRONTEND_BASE_URL=${{ secrets.SANITY_STUDIO_FRONTEND_BASE_URL }}
                   EOF
-                  # Make sure to add a secret for SANITY_AUTH_TOKEN
                   SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity deploy
+            - name: Deploy Sanity GraphQL
+              run: |
+                  set -e
+                  cat << EOF > .env.production
+                  EOF
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity graphql deploy --playground
